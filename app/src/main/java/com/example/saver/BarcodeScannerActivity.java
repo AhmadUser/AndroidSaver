@@ -1,6 +1,7 @@
   package com.example.saver;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -8,10 +9,13 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -23,19 +27,24 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
-public class BarcodeScannerActivity extends AppCompatActivity {
+public class BarcodeScannerActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int CAMERA_PERMISSION_REQUEST = 1001;
-
+    private static final int REQUEST_CODE =1 ;
     private SurfaceView cameraPreview;
     private CameraSource cameraSource;
     private ToneGenerator toneGenerator;
     private String previousBarcode = "";
-
+    private Button saveButton;
+    private Button editButton;
+    private Button priceButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_scanner);
+        saveButton=findViewById(R.id.saveButton);
+        editButton=findViewById(R.id.editButton);
+        priceButton=findViewById(R.id.priceButton);
         toneGenerator = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
 
         cameraPreview = findViewById(R.id.camera_preview);
@@ -50,6 +59,15 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             startBarcodeScanning();
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+
+        }
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
@@ -127,6 +145,14 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         // Release the ToneGenerator resources
         if (toneGenerator != null) {
             toneGenerator.release();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.saveButton){
+            Intent intent = new Intent(this, AddItemActivity.class);
+            startActivity(intent);
         }
     }
 }
