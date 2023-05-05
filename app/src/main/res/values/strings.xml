@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SAVER</string>
+    <string name="login_api">LOGIN_API</string>
+</resources>

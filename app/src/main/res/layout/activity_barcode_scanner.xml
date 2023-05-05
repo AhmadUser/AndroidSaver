@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/cornFlower"
+    android:layout_height="match_parent">
+
+
+
+
+    <SurfaceView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="549dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="600dp"
+        android:background="@color/white"
+        android:text=""
+        android:textColor="@color/cornFlower" />
+
+
+    <!-- Add any other UI elements if needed -->
+
+</FrameLayout>
