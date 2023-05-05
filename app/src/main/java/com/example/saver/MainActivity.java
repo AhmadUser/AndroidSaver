@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.INVISIBLE);
             if(exists){
                 //Toast.makeText(MainActivity.this,"Exists",Toast.LENGTH_LONG).show();
-                //Intent intent = new Intent(MainActivity.this, BarcodeScannerActivity.class);
+                Intent intent = new Intent(MainActivity.this, BarcodeScannerActivity.class);
 
                 // Start the destination activity
-               // startActivity(intent);
+                startActivity(intent);
             }
             else{
                 Toast.makeText(MainActivity.this,"Ask to sign in",Toast.LENGTH_LONG).show();

@@ -4,22 +4,43 @@
     android:background="@color/cornFlower"
     android:layout_height="match_parent">
 
-
-
-
     <SurfaceView
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"
-        android:layout_height="549dp" />
+        android:layout_height="362dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_marginTop="600dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="500dp"
         android:background="@color/white"
         android:text=""
+        android:hint="Barcode"
         android:textColor="@color/cornFlower" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="600dp"
+        android:text="Save" />
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="600dp"
+        android:text="Edit" />
+    <Button
+        android:id="@+id/priceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="600dp"
+        android:text="Price" />
+
 
 
     <!-- Add any other UI elements if needed -->
